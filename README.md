@@ -7,7 +7,9 @@ A simple proof of concept in nodejs.
 
 
 
+###DEMO
 
+http://cloud_download.tk:5000
 
 Need
 ====
@@ -15,17 +17,12 @@ My ISP speed and Connection is very unreliable , It keeps reseting my connection
 
 We can always Use a good Download manager , but not every download is resumable.
 
-So I thought a way out , Download directly to Dropbox and if you have A dropbox Client it will Automatically download it to 
+So I thought a way out , Download directly to Dropbox and if you have A dropbox Client it will Automatically download it to your Dropbox folder or if you don't have A dropbox Client installed ,it will also generate a public url to download a file which then can be pasted to any download Manager to download a file. (Not Implemented yet).
 
-Your Dropbox folder or if you don't have A dropbox Client installed It will generate A public link to download a file which i
-can be pasted to any download Manager to download a file.
-
-I am using https://github.com/andreafabrizi/Dropbox-Uploader for uploading to dropbox but you can use your own method to uplaod 
-to dropbox.
-I use it because it is easy.
+I am using https://github.com/andreafabrizi/Dropbox-Uploader for uploading to dropbox but you can use your own method to uplaod to dropbox.
 
 You can use various file types to download 
-It even supports unpacking Zip on the go
+It even supports unpacking Zip on the go.
 
 It also Supports Youtube video Download (Single/Playlist)  
 
