@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Rohit-Dropbox-Download-server</title>
+</head>
+
+<body>
+    <div id="center">
+        <form action="/download" id="download-form" method="POST">
+		    <label for="filetype"><h1><b>Select filetype</h1></b></label>
+            <select name="filetype" id="filetype">
+			<option value="0">Default</option>
+			<option value="1">zip-expand</option>
+			<option value="2">youtube-playlist</option>
+			</select><br><br>
+			<label for="url"><h1><b>URL</h1></b></label>
+			<input type="text" name="url" id="url" /><br><br>
+			<div id="filename">
+			<label for="filename"><h1><b>Filename</h1></b></label>
+			<input type="text" name="filename"/><br><br>
+			</div>
+			<div id="y-p">
+			<label for="yps"><h1><b>youtube-playlist-start</h1></b></label>
+			<input type="text" name="yps" value=1 id="yps"/><br><br>
+			<label for="ype"><h1><b>youtube-playlist-end</h1></b></label>
+			<input type="text" name="ype" value=1 id="ype"/><br><br>
+			<label for="ype"><h1><b>youtube-Format</h1></b></label>
+			<input type="text" value=18 name="format"/><br><br>
+			</div>
+            <input type="submit" id="btn-download" value="Process" />
+            <div id="percent"></div>
+            <div id="response"></div>
+        </form>
+    </div>
+    <script src="/static/js/jquery.1.10.2.min.js"></script>
+    <script>
+        $(document).ready(function () {
+		    $('#y-p').hide();
+			$('#y-p').hide();
+			$('#filetype').click(function(){
+			var dat = $('#filetype').val();
+			if(dat=="2"){
+			  $('#y-p').show();
+			  $('#filename').hide();
+			  
+			}
+			else{
+			$('#y-p').hide();
+			$('#filename').show();
+			
+			}
+			});
+            $('#btn-download').click(function (event) {
+                var data_url = $("#download-form").serializeArray();
+				//alert("clicked");
+                event.preventDefault();
+                $.ajax({
+                    type: 'POST',
+                    url: '/download',
+                    data:data_url,
+                    success: function (html) {
+					
+                        $('#response').delay(3000).html(html).fadeIn();
+						$('#percent').html('');
+                        console.log("done relax bitch!");
+                    },
+                    beforeSend: function () {
+					    $('#response').html('');
+                        $('#percent').html('<img src="static/loading.gif">').delay(3000).html();
+                    }
+
+                });
+            });
+        })
+
+        function urldecode(str) {
+            return decodeURIComponent((str + '').replace(/\+/g, '%20'));
+        }
+    </script>
+</body>
+
+</html>

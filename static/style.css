@@ -1,0 +1,4 @@
+body { font-family: 'Palatino', sans-serif; font-size: 15pt; }
+#center { margin: 25px 0 0 35%; }
+#btn-download { background-color: #ddd; font-size: 12pt; padding: 10px; }
+#btn-download:hover { background-color: #CCFF99; cursor: pointer; }
