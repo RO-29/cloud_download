@@ -27,7 +27,8 @@ It even supports unpacking Zip on the go.
 It also Supports Youtube video Download (Single/Playlist)  
 
 
-###Setup
+Setup
+=====
 
 
 ### Prerequiste NPM packages
