@@ -11,8 +11,8 @@ A simple proof of concept in nodejs.
 
 <a href = "http://cloud_download.tk:5000">Here</a>
 
-Need
-====
+###Need
+
 My ISP speed and Connection is very unreliable , It keeps reseting my connections randomly leaving My Downloads In lurch
 
 We can always Use a good Download manager , but not every download is resumable.
@@ -27,8 +27,8 @@ It even supports unpacking Zip on the go.
 It also Supports Youtube video Download (Single/Playlist)  
 
 
-Setup
-======
+###Setup
+
 
 ### Prerequiste NPM packages
 
